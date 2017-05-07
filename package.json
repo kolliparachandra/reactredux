@@ -1,0 +1,50 @@
+{
+  "name": "reactredux",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "babel-polyfill": "^6.23.0",
+    "bootstrap": "^3.3.7",
+    "jquery": "^3.2.1",
+    "prop-types": "^15.5.8",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "react-redux": "^5.0.4",
+    "react-router-dom": "^4.1.1",
+    "react-router-redux": "^4.0.8",
+    "redux": "^3.6.0",
+    "redux-thunk": "^2.2.0",
+    "toastr": "^2.1.2"
+  },
+  "devDependencies": {
+    "eslint": "^3.19.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-react": "^7.0.0",
+    "eslint-watch": "^3.1.0",
+    "eventsource-polyfill": "^0.9.6",
+    "expect": "^1.20.2",
+    "express": "^4.15.2",
+    "extract-text-webpack-plugin": "^2.1.0",
+    "file-loader": "^0.11.1",
+    "jsdom": "^10.1.0",
+    "mocha": "^3.3.0",
+    "nock": "^9.0.13",
+    "npm-run-all": "^4.0.2",
+    "open": "0.0.5",
+    "react-addons-test-utils": "^15.5.1",
+    "redux-immutable-state-invariant": "^2.0.0",
+    "redux-mock-store": "^1.2.3",
+    "rimraf": "^2.6.1",
+    "style-loader": "^0.17.0",
+    "url-loader": "^0.5.8",
+    "webpack": "^2.5.0",
+    "webpack-dev-middleware": "^1.10.2",
+    "webpack-hot-middleware": "^2.18.0"
+  }
+}
