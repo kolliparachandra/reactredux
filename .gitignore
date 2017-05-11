@@ -1,2 +1,9 @@
 node_modules/
+<<<<<<< HEAD
 
+=======
+dist/bundle.js
+dist/server
+npm-debug.log
+yarn.lock
+>>>>>>> 13dbd1d62adaa0c728691667383158751e3c7203
