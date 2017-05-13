@@ -5,7 +5,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/app';
 import { HashRouter, Route, Redirect, Switch } from 'react-router-dom';
-import Home from './components/homePage';
+import Home from './components/home/homePage';
 import About from './components/about/aboutPage';
 import './styles/styles.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
@@ -22,4 +22,4 @@ ReactDOM.render( <HashRouter baseName='/app' forceRefresh={!supportsHistory}>
     </App>
   </HashRouter>, document.getElementById('app'));
 
->>>>>>> 13dbd1d62adaa0c728691667383158751e3c7203
+
