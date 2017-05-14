@@ -3,6 +3,7 @@ var path = require('path');
 export default{
     devtool:'inline-source-map',
     entry:[
+       'babel-polyfill',
         'eventsource-polyfill',//needed with hot reload IE
          'webpack-hot-middleware/client?reload=true',//note that if reload fails it reloads whole page
          path.resolve(__dirname,'src/index')
