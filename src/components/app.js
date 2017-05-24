@@ -1,8 +1,8 @@
 import React from 'react';
-import Header from './common/Header';
+import Header from './common/header';
 import {RouteHandler} from 'react-router-dom'
 export default class App extends React.Component{
-  
+
     render(){
            return(
             <div>
@@ -12,7 +12,7 @@ export default class App extends React.Component{
               </div>
             </div>
         )
-        
+
     }
 
 }
