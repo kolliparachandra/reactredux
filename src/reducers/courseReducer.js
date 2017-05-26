@@ -1,5 +1,6 @@
 import * as types from '../actions';
-const courses=(state = [],action)=>{
+import initalState from './initialState';
+const courses=(state = initalState.courses,action)=>{
   switch(action.type){
     case types.LOAD_COURSES_SUCCESS:
       return action.courses;

@@ -1,30 +1,29 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-export default class Input extends React.Component {
-    render() {
-        let wrapperClass = 'form-group';
-        if(this.props.error && this.props.error.length > 0){
+const  TextInput =({name,label,value,onChange,placeholder,error})=> {
+       let wrapperClass = 'form-group';
+        if(error && error.length > 0){
             wrapperClass += ' ' + 'has-error';
         }
         return (
             <div className={wrapperClass}>
-                <label htmlFor={this.props.name}>{this.props.label}</label>
+                <label htmlFor={name}>{label}</label>
                 <div className="field">
                     <input type="text"
-                        name={this.props.name}
+                        name={name}
                         className="form-control"
-                        placeholder={this.props.label}
-                        value={this.props.value}
-                        ref={this.props.name}
-                        onChange={this.props.onChange}
+                        placeholder={placeholder}
+                        value={value}
+                        ref={name}
+                        onChange={onChange}
                     />
-                    <div className="input">{this.props.error}</div>
+                   {error && <div className="alert alert-danger">{error}</div>}
                 </div>
             </div>
         )
     }
-}
-Input.propTypes={
+
+TextInput.propTypes={
     name:PropTypes.string.isRequired,
     label:PropTypes.string.isRequired,
     onChange:PropTypes.func.isRequired,
@@ -32,3 +31,4 @@ Input.propTypes={
     error:PropTypes.string,
     value:PropTypes.string
 }
+export default TextInput;
