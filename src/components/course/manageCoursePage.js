@@ -5,8 +5,8 @@ import PropTypes from 'prop-types';
 import * as courseActions from '../../actions/courseAction';
 import CourseForm from './courseForm';
 class ManageCoursePage extends React.Component{
-  constructor(props){
-    super(props);
+  constructor(props){//,context){
+    super(props);//,context);
   this.state={course:this.props.course,errors:{},authors:this.props.authors};
   this.updateCourseState = this.updateCourseState.bind(this);
   this.saveCourse = this.saveCourse.bind(this);
@@ -22,6 +22,8 @@ updateCourseState(event){
 saveCourse(event){
   event.preventDefault();
   this.props.actions.saveCourse(this.state.course);
+  this.props.history.push('/courses');
+  //this.context.router.history.push('/courses');
 }
   render(){
     return(
@@ -41,9 +43,16 @@ ManageCoursePage.propTypes={
   authors:PropTypes.array.isRequired,
   actions:PropTypes.object.isRequired
 };
-
+/*ManageCoursePage.contextTypes={
+  router:PropTypes.object
+}*/
 const mapStateToProps = (state,ownprops)=>{
+  const courseId = ownprops.match.params.id;
   let course ={id:'',watchHref:'',title:'',authorId:'',length:'',category:''};
+  if(courseId && courseId != '0')
+  {
+    course = state.courses.filter(course =>course.id == courseId)[0];
+  }
   const authorFormattedForDropdown = state.authors.map(author =>{
     return {
       value : author.id,
