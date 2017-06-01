@@ -15,11 +15,12 @@ import Courses from './components/course/coursesPage';
 import ManageCoursePage from './components/course/manageCoursePage';
 import './styles/styles.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import history from './history';
 const supportsHistory = 'pushState' in window.history;
 const store = configureStore();
 store.dispatch(loadCourses());
 store.dispatch(loadAuthors());
-ReactDOM.render( <Provider store={store}><BrowserRouter  baseName="/app" forceRefresh={!supportsHistory}>
+ReactDOM.render( <Provider store={store}><BrowserRouter  baseName="/app" forceRefresh={!supportsHistory} history={history}>
     <App>
       <Switch>
         <Route  exact path="/" component={Home} />

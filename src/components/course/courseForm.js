@@ -6,7 +6,8 @@ const CourseForm =({course,allAuthors,onSave,onChange,loading,errors})=>{
   return(
     <form>
       <h1>Manage Course</h1>
-      <TextInput
+
+<TextInput
       name="title"
       label="Title"
       value={course.title}
@@ -47,7 +48,6 @@ const CourseForm =({course,allAuthors,onSave,onChange,loading,errors})=>{
       className="btn btn-primary"
       onClick={onSave}
       />
-
       </form>
   );
 };

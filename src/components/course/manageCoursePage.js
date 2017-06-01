@@ -5,8 +5,8 @@ import PropTypes from 'prop-types';
 import * as courseActions from '../../actions/courseAction';
 import CourseForm from './courseForm';
 class ManageCoursePage extends React.Component{
-  constructor(props,context){
-    super(props,context);
+  constructor(props){
+    super(props);
   this.state={course:this.props.course,errors:{},authors:this.props.authors};
   this.updateCourseState = this.updateCourseState.bind(this);
   this.saveCourse = this.saveCourse.bind(this);
@@ -29,7 +29,9 @@ saveCourse(event){
         errors={this.state.errors}
         allAuthors={this.state.authors}
          onChange={this.updateCourseState}
-         onSave={this.saveCourse}/>
+         onSave={this.saveCourse}
+          loading={false}
+          />
     );
   }
 

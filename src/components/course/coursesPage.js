@@ -6,9 +6,10 @@ import CourseList from './courseList';
 class Courses extends React.Component{
   constructor(props,context){
     super(props,context);
+    this.redirectToAddCoursePage = this.redirectToAddCoursePage.bind(this);
   }
   redirectToAddCoursePage(){
-
+    this.props.history.push('/course/0');
   }
 render(){
   const {courses} = this.props;
