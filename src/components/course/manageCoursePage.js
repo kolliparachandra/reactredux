@@ -11,7 +11,10 @@ class ManageCoursePage extends React.Component{
   this.updateCourseState = this.updateCourseState.bind(this);
   this.saveCourse = this.saveCourse.bind(this);
   }
-
+componentWillReceiveProps(nextProps){
+if(this.props.course.id != nextProps.course.id)
+this.setState({course:nextProps.course});
+}
 updateCourseState(event){
   const field = event.target.name;
   let course = this.state.course;
@@ -49,7 +52,7 @@ ManageCoursePage.propTypes={
 const mapStateToProps = (state,ownprops)=>{
   const courseId = ownprops.match.params.id;
   let course ={id:'',watchHref:'',title:'',authorId:'',length:'',category:''};
-  if(courseId && courseId != '0')
+  if(courseId && courseId != '0' &&state.courses.length > 0)
   {
     course = state.courses.filter(course =>course.id == courseId)[0];
   }
