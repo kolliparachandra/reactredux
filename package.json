@@ -7,10 +7,10 @@
     "prestart": "babel-node tools/startMessage.js",
     "start": "npm-run-all --parallel  open:src lint:watch test:watch",
     "open:src": "babel-node tools/srcServer.js",
-    "lint": "esw webpack.config.* src tools",
-    "lint:watch": "npm run lint -- --watch",
+    "lint": "esw webpack.config.* src; exit 0",
+    "lint:watch": "npm run lint -- --watch; exit 0",
     "test": "mocha --compilers js:babel-core/register --require ./tools/testSetup.js ./src/**/*.test.js",
-    "test:watch": "npm run test -- --watch"
+    "test:watch": "npm run test -- --watch; exit 0"
   },
   "author": "",
   "license": "ISC",

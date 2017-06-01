@@ -4,6 +4,6 @@ import authors from './authorReducer';
 const root = combineReducers({
   courses,
   authors
-})
+});
 
 export default root;

@@ -1,6 +1,6 @@
 
-'use strict'
-import React from 'react'
+'use strict';
+import React from 'react';
 export default class About extends React.Component{
     render(){
         return(
@@ -19,7 +19,7 @@ export default class About extends React.Component{
                     <li>Bootstrap</li>
                     </p>
                 </div>
-        )
+        );
     }
 }
 

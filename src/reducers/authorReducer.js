@@ -7,5 +7,5 @@ const authors=(state = initalState.authors,action)=>{
     default:
       return state;
   }
-}
+};
 export default authors;
