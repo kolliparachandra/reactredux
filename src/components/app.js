@@ -1,8 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import Header from './common/header';
-import {RouteHandler} from 'react-router-dom';
-export default class App extends React.Component{
+
+class App extends React.Component{
     render(){
            return(
             <div>
@@ -17,5 +18,15 @@ export default class App extends React.Component{
 
 }
 
+App.propTypes = {
+  children: PropTypes.object.isRequired,
+  loading: PropTypes.bool.isRequired
+};
 
+const mapStateToProps=(state,ownProps)=>{
+  return{
+    loading:state.numAjaxCallsInProgress > 0
+  }
+}
 
+export default connect(mapStateToProps)(App);
