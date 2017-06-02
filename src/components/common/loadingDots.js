@@ -3,16 +3,19 @@ import {PropTypes} from 'prop-types';
 class LoadingDots extends React.Component{
   constructor(){
     super();
-    this.state = {frame:1};
+    this.state = {frame:1, isMounted: false};
   }
 
   componentDidMount(){
     this.interval = setInterval(()=>{
-      this.setState({frame:this.state.frame + 1});
+    if(this.state.isMounted){
+      this.setState({frame:this.state.frame + 1,isMounted:true});
+    }
     },this.props.interval);
   }
 
   componentWillUnMount(){
+    this.setState({isMounted:false});
     clearInterval(this.interval);
   }
   render(){

@@ -35,7 +35,7 @@ saveCourse(event){
         allAuthors={this.state.authors}
          onChange={this.updateCourseState}
          onSave={this.saveCourse}
-          loading={false}
+        loading={this.props.loading}
           />
     );
   }

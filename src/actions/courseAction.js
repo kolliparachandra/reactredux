@@ -1,4 +1,5 @@
 import * as types from './index';
+import beginAjaxCall from './ajaxStatusActions';
 import courseApi from '../api/mockCourseApi';
 const loadCoursesSuccess = (courses)=>{
   return{ type:types.LOAD_COURSES_SUCCESS,courses};
@@ -13,6 +14,7 @@ export const createCourseSuccess=(course)=>{
 }
 
 export const loadCourses=()=>(dispatch)=>{
+  dispatch(beginAjaxCall());
   return courseApi.getAllCourses().then(courses=>{
     dispatch(loadCoursesSuccess(courses));
   }).catch(error =>{
@@ -23,6 +25,7 @@ export const loadCourses=()=>(dispatch)=>{
 
 
 export const saveCourse=(course)=>(dispatch,getState)=>{
+  dispatch(beginAjaxCall());
   return courseApi.saveCourse(course).then(savedCourse=>{
     course.id?dispatch(updateCourseSuccess(savedCourse)):
     dispatch(createCourseSuccess(savedCourse));
